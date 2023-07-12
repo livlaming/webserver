@@ -1,12 +1,13 @@
 # webserver
 
-A basic HTTP server using C++98 standard that handles GET/POST/DELETE requests
+A basic HTTP/1.1 web server using C++98 standard that handles GET/POST/DELETE requests.
 Learning to collaborate and about programming with sockets.
+
+The webserver uses the same non-blocking, event-driven architecture that nginx does. This allows the server to handle a high amount of requests with speed.
+poll is used to handle the multiplexing.
 
 ## Installation and usage
 ```
-git clone git@github.com:vincentvis/viroli_webserv.git viroli_webserv
-cd viroli_webserv
 cmake -S . -B build
 cmake --build build
 ```
@@ -14,7 +15,12 @@ cmake --build build
 Run the server with default configuration and browse its testing websites.
 ```
 cd build
-./webserv
+./webserv 
+```
+
+Run server with config file
+```
+./webserv [configfile]
 ```
 
 Open your favorite browser and enter in its address bar:
